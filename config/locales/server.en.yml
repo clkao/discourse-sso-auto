@@ -1,0 +1,3 @@
+en:
+  site_settings:
+    sso_auto_enabled: "Auto login with SSO provider"

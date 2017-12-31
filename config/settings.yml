@@ -1,0 +1,3 @@
+plugins:
+  sso_auto_enabled:
+    default: true
