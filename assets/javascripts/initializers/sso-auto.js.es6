@@ -5,7 +5,8 @@ export default {
 
   initialize() {
     withPluginApi('0.8.9', api => {
-      if (Discourse.SiteSettings.enable_sso && !api.getCurrentUser()) {
+      if ( !api.getCurrentUser() && (Discourse.SiteSettings.enable_sso ||
+                                     Discourse.SiteSettings.oauth2_enabled) ) {
         const {referrer, location} = document;
         const now = (new Date()).getTime();
         if (+$.cookie('sso-auto') < now - 300 * 1000) {
